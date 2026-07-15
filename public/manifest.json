@@ -1,0 +1,16 @@
+{
+  "name": "IA Bestsell Technologies",
+  "short_name": "IA Bestsell",
+  "description": "Engineering Better Businesses - Enterprise cloud, cybersecurity, DevOps and managed IT services.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#081B33",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

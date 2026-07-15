@@ -30,7 +30,7 @@ const floatingIcons = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section aria-label="Hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50/50 to-purple-50/30 dark:from-navy dark:via-navy dark:to-[#0a1f3d]" />
 
@@ -47,30 +47,32 @@ export default function Hero() {
       </div>
 
       {/* Floating icons */}
-      {floatingIcons.map(({ Icon, delay, x, y }, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 0.15, scale: 1 }}
-          transition={{ delay: delay * 0.3, duration: 0.8 }}
-          className="absolute"
-          style={{ left: x, top: y }}
-        >
+      <div aria-hidden="true">
+        {floatingIcons.map(({ Icon, delay, x, y }, index) => (
           <motion.div
-            animate={{
-              y: [0, -15, 0],
-              rotate: [0, 5, -5, 0],
-            }}
-            transition={{
-              duration: 5 + index,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
+            key={index}
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 0.15, scale: 1 }}
+            transition={{ delay: delay * 0.3, duration: 0.8 }}
+            className="absolute"
+            style={{ left: x, top: y }}
           >
-            <Icon className="w-8 h-8 md:w-12 md:h-12 text-electric-blue dark:text-electric-blue/60" />
+            <motion.div
+              animate={{
+                y: [0, -15, 0],
+                rotate: [0, 5, -5, 0],
+              }}
+              transition={{
+                duration: 5 + index,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              <Icon className="w-8 h-8 md:w-12 md:h-12 text-electric-blue dark:text-electric-blue/60" />
+            </motion.div>
           </motion.div>
-        </motion.div>
-      ))}
+        ))}
+      </div>
 
       {/* Gradient orbs */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-electric-blue/10 rounded-full blur-3xl" />
