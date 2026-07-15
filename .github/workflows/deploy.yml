@@ -12,7 +12,7 @@ permissions:
 env:
   AWS_REGION: eu-west-2
   S3_BUCKET: iab-prod-website-uk01
-  CLOUDFRONT_DISTRIBUTION_ID: E3I5AHXXBRPWMW
+  CLOUDFRONT_DISTRIBUTION_ID: E3I5AHXXBRPWWM
 
 jobs:
   deploy:
